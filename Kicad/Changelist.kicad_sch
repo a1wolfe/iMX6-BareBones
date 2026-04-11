@@ -1,0 +1,230 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "82a03613-bc32-4281-975d-4dbcc9540b89")
+	(paper "A4")
+	(title_block
+		(title "i.MX 6ULL Bare Bones")
+		(date "2026-04-04")
+		(rev "1")
+		(company "Wolfe Electronics")
+	)
+	(lib_symbols)
+	(text "Change List"
+		(exclude_from_sim no)
+		(at 28.575 18.415 0)
+		(effects
+			(font
+				(face "Cambria")
+				(size 3.81 3.81)
+				(thickness 0.381)
+				(bold yes)
+				(italic yes)
+				(color 0 0 132 1)
+			)
+		)
+		(uuid "f4d91ffc-250d-4f73-804c-52f52e85d4bc")
+	)
+	(table
+		(column_count 3)
+		(border
+			(external yes)
+			(header yes)
+			(stroke
+				(width 0.508)
+				(type solid)
+				(color 0 0 0 1)
+			)
+		)
+		(separators
+			(rows yes)
+			(cols yes)
+			(stroke
+				(width 0.508)
+				(type solid)
+				(color 0 0 0 1)
+			)
+		)
+		(column_widths 15.24 38.1 175.26)
+		(row_heights 7.62 5.08 36.195)
+		(cells
+			(table_cell "Rev"
+				(exclude_from_sim no)
+				(at 35.56 26.035 0)
+				(size 15.24 7.62)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type color)
+					(color 255 255 194 1)
+				)
+				(effects
+					(font
+						(face "Cambria")
+						(size 3.048 3.048)
+						(bold yes)
+						(color 0 0 0 1)
+					)
+				)
+				(uuid "6c3b4590-fa38-4261-8039-7bb59d2d1df7")
+			)
+			(table_cell "Date"
+				(exclude_from_sim no)
+				(at 50.8 26.035 0)
+				(size 38.1 7.62)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type color)
+					(color 255 255 194 1)
+				)
+				(effects
+					(font
+						(face "Cambria")
+						(size 3.048 3.048)
+						(bold yes)
+						(color 0 0 0 1)
+					)
+				)
+				(uuid "f97334f9-c22c-48b0-8419-cc323ea42f2e")
+			)
+			(table_cell "Changes"
+				(exclude_from_sim no)
+				(at 88.9 26.035 0)
+				(size 175.26 7.62)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type color)
+					(color 255 255 194 1)
+				)
+				(effects
+					(font
+						(face "Cambria")
+						(size 3.048 3.048)
+						(bold yes)
+						(color 0 0 0 1)
+					)
+				)
+				(uuid "960d0936-ac4c-46af-bfb1-069db6c53404")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 35.56 33.655 0)
+				(size 15.24 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type color)
+					(color 255 255 255 1)
+				)
+				(effects
+					(font
+						(face "Cambria")
+						(size 2.54 2.54)
+						(color 0 0 0 1)
+					)
+				)
+				(uuid "8f8f69bd-643a-4e1c-aa02-0ad44c8e9a64")
+			)
+			(table_cell "Jan 19th, 2026"
+				(exclude_from_sim no)
+				(at 50.8 33.655 0)
+				(size 38.1 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type color)
+					(color 255 255 255 1)
+				)
+				(effects
+					(font
+						(face "Cambria")
+						(size 2.54 2.54)
+						(color 0 0 0 1)
+					)
+				)
+				(uuid "20b5ab46-25db-49e3-8132-80e014380370")
+			)
+			(table_cell "Initial release"
+				(exclude_from_sim no)
+				(at 88.9 33.655 0)
+				(size 175.26 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type color)
+					(color 255 255 255 1)
+				)
+				(effects
+					(font
+						(face "Cambria")
+						(size 2.54 2.54)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "961dac7f-a8c9-417c-8e61-a6ade5adeb39")
+			)
+			(table_cell "2"
+				(exclude_from_sim no)
+				(at 35.56 38.735 0)
+				(size 15.24 36.195)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type color)
+					(color 255 255 255 1)
+				)
+				(effects
+					(font
+						(face "Cambria")
+						(size 2.54 2.54)
+						(color 0 0 0 1)
+					)
+				)
+				(uuid "c8aa4c04-b968-4c7b-bd8a-a88540c3d173")
+			)
+			(table_cell "Apr 4th, 2026"
+				(exclude_from_sim no)
+				(at 50.8 38.735 0)
+				(size 38.1 36.195)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type color)
+					(color 255 255 255 1)
+				)
+				(effects
+					(font
+						(face "Cambria")
+						(size 2.54 2.54)
+						(color 0 0 0 1)
+					)
+				)
+				(uuid "abbdb983-6864-4a7e-9b2b-5bf59da95a01")
+			)
+			(table_cell "Swapped DDR bits D1/D4 and D2/D7; Delete DDR TPs for GND and VREF\nChanged USB ESD diodes D3 from SP0503BAHTG to USBLC6-2SC6\nAdded C150 and F19 at P5V_DEGUB_VBUS\nRemoved R255 pull-up on ENET1_INT, redundant\nRemoved test points for ENET2 unused pins\nAdded fiducials FID1 to FID6, Tooling Holes H5 to H7\nOn eMMC, connected NC pins to nets for ease of routing\nPCBA Revision 1 prototype build"
+				(exclude_from_sim no)
+				(at 88.9 38.735 0)
+				(size 175.26 36.195)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type color)
+					(color 255 255 255 1)
+				)
+				(effects
+					(font
+						(face "Cambria")
+						(size 2.54 2.54)
+						(color 0 0 0 1)
+					)
+					(justify left)
+				)
+				(uuid "19024329-53d9-472c-bafc-87ce79ee556e")
+			)
+		)
+	)
+)

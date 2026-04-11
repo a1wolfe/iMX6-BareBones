@@ -1,0 +1,113 @@
+
+(kicad_symbol_lib (version 20211014) (generator kicad_symbol_editor)
+  (symbol "WP934MD_2GD" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
+    (property "Reference" "D" (id 0) (at -6.10568 4.83366 0)
+      (effects (font (size 1.27 1.27)) (justify bottom left))
+    )
+    (property "Value" "WP934MD_2GD" (id 1) (at -6.10677 -5.85232 0)
+      (effects (font (size 1.27 1.27)) (justify bottom left))
+    )
+    (property "Footprint" "WP934MD_2GD:LED_WP934MD_2GD" (id 2) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "PARTREV" "V.9B" (id 4) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "STANDARD" "Manufacturer Recommendation" (id 5) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "MANUFACTURER" "KingBright" (id 6) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (symbol "WP934MD_2GD_1_0"
+      (polyline
+        (pts (xy -2.54 -1.524) (xy 0.0 0.0)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 0.0 0.0) (xy -2.54 1.524)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 0.0 1.524) (xy 0.0 -1.524)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -2.54 0.0) (xy -5.08 0.0)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy -0.762 2.032) (xy 1.016 4.064)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -2.032 2.286) (xy -0.254 4.318)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -0.254 4.318) (xy -0.254 3.556)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 1.016 4.064) (xy 0.254 4.064)) (stroke (width 0.254))
+      )
+      (rectangle (start -3.40783333333 -1.5875) (end 0.148166666667 4.2545)
+        (stroke (width 0.254)) (fill (type background))
+      )
+      (pin passive line (at 5.08 0.0 180.0) (length 5.08)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "1"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at -7.62 0.0 0) (length 2.54)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "2"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+    )
+    (symbol "WP934MD_2GD_2_0"
+      (polyline
+        (pts (xy -2.54 -1.524) (xy 0.0 0.0)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 0.0 0.0) (xy -2.54 1.524)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 0.0 1.524) (xy 0.0 -1.524)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -2.54 0.0) (xy -5.08 0.0)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy -0.762 2.032) (xy 1.016 4.064)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -2.032 2.286) (xy -0.254 4.318)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -0.254 4.318) (xy -0.254 3.556)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 1.016 4.064) (xy 0.254 4.064)) (stroke (width 0.254))
+      )
+      (rectangle (start -3.40783333333 -1.5875) (end 0.148166666667 4.2545)
+        (stroke (width 0.254)) (fill (type background))
+      )
+      (pin passive line (at 5.08 0.0 180.0) (length 5.08)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "3"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at -7.62 0.0 0) (length 2.54)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "4"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+    )
+  )
+)

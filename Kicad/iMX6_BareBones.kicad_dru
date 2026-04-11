@@ -1,0 +1,19 @@
+(version 1)
+
+(rule IMX6_ESCAPE_CLEARANCE
+  (condition "A.insideArea('IMX6_BGA')")
+  (constraint clearance (min 4mil))
+)
+
+(rule DRAM_ESCAPE_CLEARANCE
+  (condition "A.insideArea('DRAM_BGA')")
+  (constraint clearance (min 4mil))
+)
+
+(rule eMMC_ESCAPE_CLEARANCE
+  (condition "A.insideArea('eMMC_BGA')")
+  (constraint clearance (min 4mil))
+)
+
+
+
