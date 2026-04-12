@@ -37,9 +37,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": true,
         "pads": {
-          "drill": 1.152,
-          "height": 1.152,
-          "width": 1.152
+          "drill": 1.0,
+          "height": 1.7,
+          "width": 1.7
         },
         "silk_line_width": 0.2,
         "silk_text_italic": false,
@@ -722,7 +722,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "C:/Users/awolf/Documents/KiCad/Projects/iMX6_BareBones/PCB/",
+      "plot": "C:/Users/awolf/Documents/KiCad/Projects/iMX6_BareBones/PDF Output/",
       "pos_files": "C:/Users/awolf/Documents/KiCad/Projects/iMX6_BareBones/Production/",
       "specctra_dsn": "",
       "step": "",
