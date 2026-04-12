@@ -22,7 +22,7 @@ The iMX6 Bare Bones project was created with the following objectives:
 
 System Block Diagram:
 
-<img width="1641" height="820" alt="image" src="https://github.com/user-attachments/assets/f2fe3ab9-532d-444e-b885-953a5a73fbb0" />
+<img width="1641" height="820" alt="block_diagram" src="Design Files\Images\block_diagram.png" />
 
 <br>The i.MX 6ULL processor was selected mainly for it's simple and forgiving boot sequence requirements.
 
@@ -30,11 +30,11 @@ System Block Diagram:
 
 PCBA, Top 3D View
 
-<img width="1786" height="1213" alt="image" src="https://github.com/user-attachments/assets/63bae630-ded5-49c2-a5b7-60ae5af13ebb" />
+<img width="1786" height="1213" alt="pcba_top" src="Design Files\Images\pcba_top.png" />
 
 <br>PCBA, Bottom 3D View
 
-<img width="1808" height="1176" alt="image" src="https://github.com/user-attachments/assets/71dbccf5-87c9-496f-96ec-01a86afc56c4" /><br>
+<img width="1808" height="1176" alt="pcba_bottom" src="Design Files\Images\pcba_bottom.png" /><br>
 
 ### Placement
 - All I/O connectors are placed along a single board edge. This enables easy cable insertion from the front of a system with an enclosure design.
