@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "i.MX 6ULL Bare Bones")
-		(date "2026-04-04")
+		(date "2026-04-22")
 		(rev "1")
 		(company "Wolfe Electronics")
 	)
