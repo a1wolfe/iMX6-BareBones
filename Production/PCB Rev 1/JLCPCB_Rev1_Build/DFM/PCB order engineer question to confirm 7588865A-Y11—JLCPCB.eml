@@ -1,0 +1,456 @@
+Delivered-To: awolfe196@gmail.com
+Received: by 2002:ab3:788a:0:b0:2f7:37b7:14b8 with SMTP id l10csp3202585ltj;
+        Wed, 22 Apr 2026 19:12:48 -0700 (PDT)
+X-Received: by 2002:a05:6102:4a92:b0:607:4fe2:d3e1 with SMTP id ada2fe7eead31-616f54a1970mr14547553137.13.1776910367977;
+        Wed, 22 Apr 2026 19:12:47 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1776910367; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=gAUVJFesp+gzICr9Aql/rutokHN0LEuqXiV7DzA1HoIytansJAbOcQmGfVQaZWQVmm
+         gT+l0iTeDYzKoyeYvtNMCM/neUCuR+iKdFbzXZQBRNzQPMt0rkEi8bPFSdXL/eSCgU7B
+         ichmCGb23ceyfUGXmd3bdNuBBTG+0CU9sdx2ap/Ql7JedKwzP6o35OlhYNMOlSDHODbM
+         Di5ngaK76kNcB4qmiJE+g8LiAKlfFjnI/iKqlUCReD4ldVYz25+wZfEtaQXVIWdVoGM6
+         sDSF7FlMY6i/8OTZ100gTQC0O/R7cpe/XxTk7DNdCeG8TjginytrB3RncoBqaB7Nf0lZ
+         jS1g==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:mime-version:sender:from:dkim-signature;
+        bh=vC0+PFXANxel4snh/8yt4YBZU3yyMHgbSY07ZdTT8co=;
+        fh=cb3fxZlxjP3h168T7CWD9t7A3hvehrgUFy6rJP+I3f8=;
+        b=gjpnQLiYWiJSdCuRg40ZdJusAMascxdMo9GLhaPiEWrzrSqrve3PBFJjeIGqFpISUf
+         0eL/+iccgmYaCZ/POdCoqqDzPfn+Lhuvr+TNmgHcx3zM5440hgkG5ImuNjpbp04o3OA9
+         vffvnOG37uZAY6U6v5YMgH7vLC+oWjuctmUWAT3fk6dEZnAR7zUNuk/7LU+qzpVryggn
+         LmidxixG9QSrI/x1YxKeduYs+T1yJSgimzaNn2wKpqyr9o3yJu23AVDO0S3oXFz8u7dO
+         5WIYVA5LduPXN+cA4ETwiUI+g4T3UH0+sa8W1AZAOHMJCWvpPozaVtT7ubybILGbvbJQ
+         Rvhw==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=fail header.i=@jlcpcb.com header.s=google header.b=Mid3eQmI;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of sunny@jlcpcb.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=sunny@jlcpcb.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=jlcpcb.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <sunny@jlcpcb.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id ada2fe7eead31-617459a6deesor6039814137.2.2026.04.22.19.12.47
+        for <awolfe196@gmail.com>
+        (Google Transport Security);
+        Wed, 22 Apr 2026 19:12:47 -0700 (PDT)
+Received-SPF: pass (google.com: domain of sunny@jlcpcb.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=fail header.i=@jlcpcb.com header.s=google header.b=Mid3eQmI;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of sunny@jlcpcb.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=sunny@jlcpcb.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=jlcpcb.com;
+       dara=pass header.i=@gmail.com
+ARC-Seal: i=1; a=rsa-sha256; t=1776910367; cv=none;
+        d=google.com; s=arc-20240605;
+        b=LE2MfzIsOYsd/L/DWhn2wVx7OAEnK6w171SgdUnzzUGS/cvJHEQwGVvBASmiOzVFm9
+         FRMcHIJeeopQYAxr275UwL+/UZDvIo5NxPTY2K5ff2sPpviXds1sI2reOd4DBoE/kGC2
+         tgzAsmN8LB4tpwSVSmns6xWjPnh7EZspjnLkSMMhuO72C9d6qCxsN8chhg0ktT1FpNr4
+         vc/jv1Dy1TbdMkGgbvEUd49zU6RgDEOrFJ5eQ74JB6Hhh4r7WrqMwO4/wrpnQWGmi9ly
+         M9UNcjH1kCXLWXJvtq/yWfH+aqBsCY1cnJEdA4YsU+rRdata+69TjWTz0y8ASyecximg
+         9mYw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:mime-version:sender:from:dkim-signature;
+        bh=vC0+PFXANxel4snh/8yt4YBZU3yyMHgbSY07ZdTT8co=;
+        fh=cb3fxZlxjP3h168T7CWD9t7A3hvehrgUFy6rJP+I3f8=;
+        b=IxF7ByvKksAPzLUCJH1aBFvX0B1sZ/07ksJgX1WNuDoG4cVZUPV+sE9rvO0tmrzrDY
+         zACOkUtCdXpYWzknDs/SpmAUEFxDjfn40p9R/b6El3eRcvD/sBKq0efcGjq59MHfZVBH
+         +BzRbJf3lRxNGCEsFt0sZIupLVltq07hg101MlZyWzJx2Yy1NU7+fxsRKMcFiJ3RiNSc
+         t1iEdhzH316R32X0JtUuO0cfqHHW9hCEq9yH6d7mN6OBZET2GGlQ4h/SzJSp5H9DLlNU
+         8MCnNIm65HH+VTnwqr2PeLigvqOefAIRTvFebAzKb1usWbsZHXwMGxdouTRg2s4yISod
+         /uvw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=jlcpcb.com; s=google; t=1776910367; x=1777515167; dara=google.com;
+        h=to:subject:message-id:date:mime-version:sender:from:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=vC0+PFXANxel4snh/8yt4YBZU3yyMHgbSY07ZdTT8co=;
+        b=Mid3eQmII8up+byTTJ1YzwioXMedg6mZhHu9OIgD+JjamUUYgnvGL1TDSKqHGWfgbK
+         g1Qg0P0mCxuRCNkF+Mr3PDCr8kTTTy3bothoZVeR4xbVIHAq011SOdj5y4QNmSUGBShs
+         IFkizzJrwXCZBePavH1OnUd063oje/jp90Ye3AQFT/UT//TTsB51+44kVrC1jv+mepcm
+         6wfPNZzLo+xhHB4LZ4zOqOVGcZpalZVuyG/bsPF3MFiy4BL6njCcPOW/fq14DhgbjPK/
+         YvTIdXWshxgAp8g8B5V0xaFaVGpPn1iVPaa3hfw6W7YgUksPotDfyrjkCyTq1gM5XpF7
+         lENQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1776910367; x=1777515167;
+        h=to:subject:message-id:date:mime-version:sender:from:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=vC0+PFXANxel4snh/8yt4YBZU3yyMHgbSY07ZdTT8co=;
+        b=b+thflvGAENZg8RYr2grnpDmHkRu7N79iY9sQA0PzYg+F2qiVayfsLsXnKvfE2JJyZ
+         wTx5ogKSK7uD1EAvKeliA3BfniJUYBU3uROIEreTndb06LwmfT2V+dnMhG+/V4ouile3
+         x83swZaEJK6uAnbwPZCEGNZJYpMchKStj0nn/jEeC3m0ic1f22QEVkfgRkv79vFBsR+u
+         cpuQeLOdVs6IZEw3kqAkJOKUmEZ837vwTkc1kI0Auf11B1dHEUHRU/bRBxsaGuD1xDnN
+         F1y+wryqrMg2mpTWk17t5ww5JlQdwLWg1XlgzFxORwstrGKbxcmffSZFbNlZ1HXafsAh
+         eBKA==
+X-Gm-Message-State: AOJu0YxGF5JnctFwi5X+56PS+BDfDLcbyT93ZY49RKArG/DqI8BDQGfE
+	fBL+IBZH1ztc8hYiG5pJDvF76EiA9PyFYMyQDXSR7Ai4BT77j2IaCswG2gDB1r0T4MXzSAv1jtu
+	hlK6c3s/69hFtvJXgy/jTYBm31G8bSsQMOO/ObbX6fyE+qtl2KoWw0sc=
+X-Gm-Gg: AeBDiesgGRY4z5U5OD2ilX3uZkH7r0Obp4bmW7Tqc5IyaXHpn2dwbUBacUZGu3t+tmM
+	7LrYJ9Ersm4j3XY+xduZmetN9z0evqwzEZKSLrhuLBYCLL9489F2J6H09Vovl7Vt6E4J9YVWNWg
+	dNSl9hcKPLNvfCsl+Zc/X7pX9pSe9BwTdy1SOVv8I2hfg4PJuvegdqlfujhPBgCZoh8H0bjXr5b
+	LLXnlr8NyIGd7+sz3xco+rEuYVWjwGaO4iuHU74dXRcNuTby8st0sCT7rg0wate/rcgQ04gqzCW
+	nS1YZnAlnlw8J6qQZfE=
+X-Received: by 2002:a05:6102:5111:b0:60a:9cac:d28a with SMTP id
+ ada2fe7eead31-616f453509dmr13064215137.3.1776910366659; Wed, 22 Apr 2026
+ 19:12:46 -0700 (PDT)
+Received: from 474530442848 named unknown by gmailapi.google.com with
+ HTTPREST; Thu, 23 Apr 2026 05:12:46 +0300
+Received: from 474530442848 named unknown by gmailapi.google.com with
+ HTTPREST; Thu, 23 Apr 2026 05:12:46 +0300
+From: sunny@jlcpcb.com
+Sender: sunny@jlcpcb.com
+MIME-Version: 1.0
+X-JLC-MSG-ID: 570043975043747841
+X-JLC-THREAD-ID: 569335275591049218
+X-JLC-THREAD-ACCESS-ID: c80d5a5995764cf4921dcb156006ed58
+X-JLC-BIZ: 3
+Date: Thu, 23 Apr 2026 05:12:46 +0300
+X-Google-Sender-Auth: MgdKB83ioA-xSok0lCWOOXDBSyE
+X-Gm-Features: AQROBzBh1yZ6PHmnXpGOPJTyIrQxb_qxgoQa0Dx8PD2RDUL3TsgiIsWwlJUOSd4
+Message-ID: <CAFF-LP3AzFk8Q+ZsyciH3yAFVSkvJkp0nhFpmYnJ7KQsgd5deA@mail.gmail.com>
+Subject: =?UTF-8?Q?Re=3A_PCB_order_engineer_question_to_confirm_7588865A=2D?=
+	=?UTF-8?Q?Y11=E2=80=94JLCPCB?=
+To: awolfe196@gmail.com
+Content-Type: multipart/alternative; boundary="00000000000033e5370650172f48"
+
+--00000000000033e5370650172f48
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Andrew,
+
+We noted order replaced file.
+
+Our audit team will review it.
+
+Any problem, we will keep you posted.
+
+Best Regards
+
+Sunny
+On Thu, Apr 23, 2026 08:33 am awolfe196 wrote:
+Hi Sunny,
+
+You should now have the updated gerber files, in
+"iMX6_BareBones_Rev1_Gerbers_042226.zip".
+
+
+Thanks,
+Andrew
+
+On Wed, Apr 22, 2026 at 7:06=E2=80=AFAM <sunny@jlcpcb.com> wrote:
+
+> Hi Andrew,
+>
+> The spacing we mentioned is after compensation.
+>
+> We have activated the file-replace button for you, please kindly go to
+> order page to re-upload the right file. Below picture for your reference.
+>
+> Any problem, please feel free to let us know.
+>
+> Best Regards
+>
+> Sunny
+>
+> On Wed, Apr 22, 2026 05:05 pm awolfe196 wrote:
+> Hi Sunny,
+>
+> I will update the design and upload new Gerber files. Can you please
+> provide a link for me to upload the new files?
+>
+> I am using a minimum clearance of 4mils / 0.1mm, which is listed in JLC
+> PCB's capabilities. Where did you find a spacing of 2.6mils? I checked bo=
+th
+> trace and pad spacing in the JLCDFM tool and did not find any values lowe=
+r
+> than 0.1mm.
+>
+> Trace spacing
+> [image: image.png]
+>
+> Pad spacing
+> [image: image.png]
+>
+>
+> Thanks,
+> Andrew
+>
+>
+> On Mon, Apr 20, 2026 at 11:16=E2=80=AFPM <sunny@jlcpcb.com> wrote:
+>
+>> Hi dear customer,
+>>
+>> Sorry to bother you, but we'd like to confirm with you 2 issues found
+>> when engineer making production file of your PCB order.
+>>
+>> 1-As shown below, the ratio of copper pour on both L1 and L6 layer are
+>> less than 30%, the minimum etching spacing is 2.6mil which is difficult =
+to
+>> proceed, there are 2 solutions for you, please kindly check which one we
+>> should follow:
+>>
+>> A-allow to add some copper pour on empty areas to make the ratio of
+>> copper pour =EF=BC=9E30%
+>>
+>> B-adjust minimum trace spacing =E2=89=A55mil
+>>
+>> 2--As shown below, the solder mask openings are smaller than pads in
+>> copper layer, there are 2 solutions for you, please kindly check which o=
+ne
+>> we should follow:
+>>
+>> A-proceed as per the file
+>>
+>> B-make solder mask openings as per the pads in copper layer
+>>
+>> Your early reply will be highly appreciated, thank you so much!
+>>
+>> Best Regards
+>>
+>> Sunny
+>>
+>>
+>>
+>> *Sunny*
+>>
+>> Web: JLCPCB.COM <https://jlcpcb.com>
+>>
+>> Mail: sunny@jlcpcb.com
+>>
+>> How would you rate my reply?
+>> Great
+>> <https://jlcpcb.com/api/overseasEmailService/workOrderWeb/redirectRating=
+Page/E0AE0B0976A4FA49C89CBE4F6404BDED7E3A60F4BE3B7F8A/A9CC18E0F9223D3827E76=
+85C21C00D1F/1>
+>>    Okay
+>> <https://jlcpcb.com/api/overseasEmailService/workOrderWeb/redirectRating=
+Page/E0AE0B0976A4FA49C89CBE4F6404BDED7E3A60F4BE3B7F8A/A9CC18E0F9223D3827E76=
+85C21C00D1F/2>
+>>    Not Good
+>> <https://jlcpcb.com/api/overseasEmailService/workOrderWeb/redirectRating=
+Page/E0AE0B0976A4FA49C89CBE4F6404BDED7E3A60F4BE3B7F8A/A9CC18E0F9223D3827E76=
+85C21C00D1F/3>
+>>
+>>
+>
+> *Sunny*
+>
+> Web: JLCPCB.COM <https://jlcpcb.com>
+>
+> Mail: sunny@jlcpcb.com
+>
+> How would you rate my reply?
+> Great
+> <https://jlcpcb.com/api/overseasEmailService/workOrderWeb/redirectRatingP=
+age/63968BC0138ABDA99B2D2C0B636099E7A5308667CADE74CA/B9AF33112812256C1B5D1F=
+E01F2BD5B2/1>
+>    Okay
+> <https://jlcpcb.com/api/overseasEmailService/workOrderWeb/redirectRatingP=
+age/63968BC0138ABDA99B2D2C0B636099E7A5308667CADE74CA/B9AF33112812256C1B5D1F=
+E01F2BD5B2/2>
+>    Not Good
+> <https://jlcpcb.com/api/overseasEmailService/workOrderWeb/redirectRatingP=
+age/63968BC0138ABDA99B2D2C0B636099E7A5308667CADE74CA/B9AF33112812256C1B5D1F=
+E01F2BD5B2/3>
+>
+>
+
+*Sunny*
+
+Web: JLCPCB.COM <https://jlcpcb.com>
+
+Mail: sunny@jlcpcb.com
+
+How would you rate my reply?
+Great
+<https://jlcpcb.com/api/overseasEmailService/workOrderWeb/redirectRatingPag=
+e/9F194F16312E15407A034ED73B457DD3BDD24732C5D0830E/18B7CAA646381ADC96B3A149=
+4315A944/1>
+   Okay
+<https://jlcpcb.com/api/overseasEmailService/workOrderWeb/redirectRatingPag=
+e/9F194F16312E15407A034ED73B457DD3BDD24732C5D0830E/18B7CAA646381ADC96B3A149=
+4315A944/2>
+   Not Good
+<https://jlcpcb.com/api/overseasEmailService/workOrderWeb/redirectRatingPag=
+e/9F194F16312E15407A034ED73B457DD3BDD24732C5D0830E/18B7CAA646381ADC96B3A149=
+4315A944/3>
+
+--00000000000033e5370650172f48
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div id=3D"x_1324243406495718jlcReplyAbove" class=3D"jlc-overseas-body-bloc=
+k"><p style=3D"font-size:16px;line-height:1.5"><span style=3D"font-size:16p=
+x">Hi Andrew, </span></p><p style=3D"font-size:16px;line-height:1.5"><span =
+style=3D"font-size:16px">We noted order replaced file.</span></p><p style=
+=3D"font-size:16px;line-height:1.5"><span style=3D"font-size:16px">Our audi=
+t team will review it.</span></p><p style=3D"font-size:16px;line-height:1.5=
+"><span style=3D"font-size:16px">Any problem, we will keep you posted.</spa=
+n></p><p style=3D"font-size:16px;line-height:1.5"><span style=3D"font-size:=
+16px">Best Regards</span></p><p style=3D"font-size:16px;line-height:1.5"><s=
+pan style=3D"font-size:16px">Sunny</span></p><div class=3D"jlc-overseas-rep=
+lying-block" style=3D"margin-top:12px"><div style=3D"margin-bottom:10px;col=
+or:rgba(11,18,26,0.6)">On Thu, Apr 23, 2026 08:33 am awolfe196  wrote:</div=
+><div style=3D"margin-left:10px;padding-left:14px;border-left:2px solid #e6=
+eaf1"><div dir=3D"ltr">Hi Sunny,<div><br></div><div>You should now have the=
+ updated gerber files, in &quot;iMX6_BareBones_Rev1_Gerbers_042226.zip&quot=
+;.=C2=A0</div><div><br></div><div><br></div><div>Thanks,</div><div>Andrew</=
+div></div><br><div class=3D"gmail_quote gmail_quote_container"><div dir=3D"=
+ltr" class=3D"gmail_attr">On Wed, Apr 22, 2026 at 7:06=E2=80=AFAM &lt;<a hr=
+ef=3D"mailto:sunny@jlcpcb.com">sunny@jlcpcb.com</a>&gt; wrote:<br></div><bl=
+ockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-lef=
+t:1px solid rgb(204,204,204);padding-left:1ex"><div id=3D"m_439067089472978=
+251x_1211725971626112jlcReplyAbove"><p style=3D"font-size:16px;line-height:=
+1.5"><span style=3D"font-size:16px">Hi Andrew,</span></p><p style=3D"font-s=
+ize:16px;line-height:1.5"><span style=3D"font-size:16px">The spacing we men=
+tioned is after compensation.</span></p><p style=3D"font-size:16px;line-hei=
+ght:1.5"><span style=3D"font-size:16px">We have activated the file-replace =
+button for you, please kindly go to order page to re-upload the right file.=
+ Below picture for your reference.</span></p><p style=3D"font-size:16px;lin=
+e-height:1.5"><span style=3D"font-size:16px">Any problem, please feel free =
+to let us know.</span></p><p style=3D"font-size:16px;line-height:1.5"><span=
+ style=3D"font-size:16px">Best Regards</span></p><p style=3D"font-size:16px=
+;line-height:1.5"><span style=3D"font-size:16px">Sunny</span></p><p style=
+=3D"font-size:16px;line-height:1.5"><img src=3D"https://jlcpcb.com//msgCust=
+omerMessage/downloadMessageFile?fileUploadAccessId=3D138c070aec924b598457e4=
+f7c8cb6ab5" alt=3D""></p><div style=3D"margin-top:12px"><div style=3D"margi=
+n-bottom:10px;color:rgba(11,18,26,0.6)">On Wed, Apr 22, 2026 05:05 pm awolf=
+e196  wrote:</div><div style=3D"margin-left:10px;padding-left:14px;border-l=
+eft:2px solid rgb(230,234,241)"><div><div dir=3D"ltr">Hi Sunny,<div><br></d=
+iv><div>I will update the design and upload new Gerber files. Can you pleas=
+e provide a link for me to upload the new files?<br><br>I am using a minimu=
+m clearance of 4mils / 0.1mm, which is listed in JLC PCB&#39;s capabilities=
+. Where did you find a spacing of 2.6mils? I checked both trace and pad spa=
+cing in the JLCDFM tool and did not find any values lower than 0.1mm.</div>=
+<div><br></div><div>Trace spacing</div><div><img src=3D"https://jlcpcb.com/=
+api/overseas-pcb-order/v1/newEmail/file/preview/ebb3cfaa41fd4810b805a2a7a0f=
+ec8c3" alt=3D"image.png" style=3D"width: 852px; max-width: 100%;"></div><di=
+v><br></div><div>Pad spacing</div><img src=3D"https://jlcpcb.com/api/overse=
+as-pcb-order/v1/newEmail/file/preview/1bd99cc9fc5e4b7f90bb595819348531" alt=
+=3D"image.png" style=3D"width: 852px; max-width: 100%;"><br><div><br></div>=
+<div><br></div><div dir=3D"auto">Thanks,</div><div dir=3D"auto">Andrew</div=
+><div><br></div></div></div><div><br><div class=3D"gmail_quote"><div dir=3D=
+"ltr" class=3D"gmail_attr">On Mon, Apr 20, 2026 at 11:16=E2=80=AFPM &lt;<a =
+href=3D"mailto:sunny@jlcpcb.com" target=3D"_blank">sunny@jlcpcb.com</a>&gt;=
+ wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px =
+0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex"><div id=
+=3D"m_439067089472978251m_-1308645181445380573m_-2321545938069819131x_13622=
+76755097377jlcReplyAbove"><p style=3D"font-size:16px;text-align:start;line-=
+height:1.5">Hi dear customer,</p><p style=3D"font-size:16px;text-align:star=
+t;line-height:1.5">Sorry to bother you, but we&#39;d like to confirm with y=
+ou 2 issues found when engineer making production file of your PCB order.</=
+p><p style=3D"font-size:16px;text-align:start;line-height:1.5">1-As shown b=
+elow, the ratio of copper pour on both L1 and L6 layer are less than 30%, t=
+he minimum etching spacing is 2.6mil which is difficult to proceed, there a=
+re 2 solutions for you, please kindly check which one we should follow:</p>=
+<p style=3D"font-size:16px;text-align:start;line-height:1.5">A-allow to add=
+ some copper pour on empty areas to make the ratio of copper pour =EF=BC=9E=
+30%</p><p style=3D"font-size:16px;text-align:start;line-height:1.5">B-adjus=
+t minimum trace spacing =E2=89=A55mil</p><p style=3D"font-size:16px;text-al=
+ign:start;line-height:1.5"><img src=3D"https://jlcpcb.com/api/overseas-pcb-=
+order/v1/msgCustomerMessage/downloadMessageFile?fileUploadAccessId=3D454961=
+cca41047c0882152969430f2e4" alt=3D""></p><p style=3D"font-size:16px;text-al=
+ign:start;line-height:1.5">2--As shown below, the solder mask openings are =
+smaller than pads in copper layer, there are 2 solutions for you, please ki=
+ndly check which one we should follow:</p><p style=3D"font-size:16px;text-a=
+lign:start;line-height:1.5">A-proceed as per the file</p><p style=3D"font-s=
+ize:16px;text-align:start;line-height:1.5">B-make solder mask openings as p=
+er the pads in copper layer</p><p style=3D"font-size:16px;text-align:start;=
+line-height:1.5"><img src=3D"https://jlcpcb.com/api/overseas-pcb-order/v1/m=
+sgCustomerMessage/downloadMessageFile?fileUploadAccessId=3D7d2fa8772f92401b=
+b6d2322f4b30bc55" alt=3D""></p><p style=3D"font-size:16px;text-align:start;=
+line-height:1.5">Your early reply will be highly appreciated, thank you so =
+much!</p><p style=3D"font-size:16px;text-align:start;line-height:1.5">Best =
+Regards</p><p style=3D"font-size:16px;text-align:start;line-height:1.5">Sun=
+ny</p><div id=3D"m_439067089472978251m_-1308645181445380573m_-2321545938069=
+819131signature-overseas-jlc"><p><br></p><p><br></p><p><img src=3D"https://=
+jlcpcb.com/api/overseas-pcb-order/v1/newEmail/file/preview/8ce5a6f5b8704f18=
+880a405da38c0bc7" style=3D"width: 70px; height: 70px;"></p>
+      <p><strong style=3D"color:rgb(255,165,0)">Sunny</strong></p>
+      <p><span style=3D"color:rgb(255,165,0)">Web: </span><a href=3D"https:=
+//jlcpcb.com" target=3D"_blank"><span style=3D"color:rgb(21,167,255)">JLCPC=
+B.COM</span></a></p>
+      <p><span style=3D"color:rgb(255,165,0)">Mail: </span><a href=3D"mailt=
+o:sunny@jlcpcb.com" style=3D"color:rgb(21,167,255)" target=3D"_blank"><span=
+ style=3D"color:rgb(21,167,255)">sunny@jlcpcb.com</span></a></p></div><div =
+id=3D"m_439067089472978251m_-1308645181445380573m_-2321545938069819131jlcRa=
+ting"><p style=3D"font-size:16px"><span style=3D"color:rgb(0,0,0)">How woul=
+d you rate my reply?<br></span><a href=3D"https://jlcpcb.com/api/overseasEm=
+ailService/workOrderWeb/redirectRatingPage/E0AE0B0976A4FA49C89CBE4F6404BDED=
+7E3A60F4BE3B7F8A/A9CC18E0F9223D3827E7685C21C00D1F/1" style=3D"text-align:st=
+art" target=3D"_blank">Great</a><span style=3D"color:rgb(0,0,0)"> =C2=A0 =
+=C2=A0</span><a href=3D"https://jlcpcb.com/api/overseasEmailService/workOrd=
+erWeb/redirectRatingPage/E0AE0B0976A4FA49C89CBE4F6404BDED7E3A60F4BE3B7F8A/A=
+9CC18E0F9223D3827E7685C21C00D1F/2" style=3D"text-align:start" target=3D"_bl=
+ank">Okay</a><span style=3D"color:rgb(0,0,0)"> =C2=A0 =C2=A0</span><a href=
+=3D"https://jlcpcb.com/api/overseasEmailService/workOrderWeb/redirectRating=
+Page/E0AE0B0976A4FA49C89CBE4F6404BDED7E3A60F4BE3B7F8A/A9CC18E0F9223D3827E76=
+85C21C00D1F/3" style=3D"text-align:start" target=3D"_blank">Not Good</a></p=
+></div><img id=3D"m_439067089472978251m_-1308645181445380573m_-232154593806=
+9819131jlc-trace-img" src=3D"https://jlcpcb.com/api/overseasEmailService/em=
+ailWeb/markAsRead/569335275591049218/569335275591049217" alt=3D""><p id=3D"=
+m_439067089472978251m_-1308645181445380573m_-2321545938069819131x-jlc-threa=
+d-id=3D569335275591049218x-jlc-thread-access-id=3D43cf5db46c2c48da927d7c3e8=
+278c1ebnew"></p></div>
+</blockquote></div>
+</div></div></div><div id=3D"m_439067089472978251signature-overseas-jlc"><p=
+><br></p><p><br></p><p><img src=3D"https://jlcpcb.com/api/overseas-pcb-orde=
+r/v1/newEmail/file/preview/8ce5a6f5b8704f18880a405da38c0bc7" style=3D"width=
+: 70px; height: 70px;"></p>
+      <p><strong style=3D"color:rgb(255,165,0)">Sunny</strong></p>
+      <p><span style=3D"color:rgb(255,165,0)">Web: </span><a href=3D"https:=
+//jlcpcb.com" target=3D"_blank"><span style=3D"color:rgb(21,167,255)">JLCPC=
+B.COM</span></a></p>
+      <p><span style=3D"color:rgb(255,165,0)">Mail: </span><a href=3D"mailt=
+o:sunny@jlcpcb.com" style=3D"color:rgb(21,167,255)" target=3D"_blank"><span=
+ style=3D"color:rgb(21,167,255)">sunny@jlcpcb.com</span></a></p></div><div =
+id=3D"m_439067089472978251jlcRating"><p style=3D"font-size:16px"><span styl=
+e=3D"color:rgb(0,0,0);background-color:rgb(255,255,255)">How would you rate=
+ my reply?<br></span><a href=3D"https://jlcpcb.com/api/overseasEmailService=
+/workOrderWeb/redirectRatingPage/63968BC0138ABDA99B2D2C0B636099E7A5308667CA=
+DE74CA/B9AF33112812256C1B5D1FE01F2BD5B2/1" style=3D"text-align:start" targe=
+t=3D"_blank">Great</a><span style=3D"color:rgb(0,0,0);background-color:rgb(=
+255,255,255)"> =C2=A0 =C2=A0</span><a href=3D"https://jlcpcb.com/api/overse=
+asEmailService/workOrderWeb/redirectRatingPage/63968BC0138ABDA99B2D2C0B6360=
+99E7A5308667CADE74CA/B9AF33112812256C1B5D1FE01F2BD5B2/2" style=3D"text-alig=
+n:start" target=3D"_blank">Okay</a><span style=3D"color:rgb(0,0,0);backgrou=
+nd-color:rgb(255,255,255)"> =C2=A0 =C2=A0</span><a href=3D"https://jlcpcb.c=
+om/api/overseasEmailService/workOrderWeb/redirectRatingPage/63968BC0138ABDA=
+99B2D2C0B636099E7A5308667CADE74CA/B9AF33112812256C1B5D1FE01F2BD5B2/3" style=
+=3D"text-align:start" target=3D"_blank">Not Good</a></p></div><img id=3D"m_=
+439067089472978251jlc-trace-img" src=3D"https://jlcpcb.com/api/overseasEmai=
+lService/emailWeb/markAsRead/569335275591049218/569815860347867137" alt=3D"=
+"><p id=3D"m_439067089472978251x-jlc-thread-id=3D569335275591049218x-jlc-th=
+read-access-id=3D06fbbcc207bc4e5fbeb5a4d4f8b59e82new"></p></div>
+</blockquote></div></div></div><div id=3D"signature-overseas-jlc"><p><br></=
+p><p><br></p><p><img src=3D"https://jlcpcb.com/api/overseas-pcb-order/v1/ne=
+wEmail/file/preview/8ce5a6f5b8704f18880a405da38c0bc7" style=3D"width: 70px;=
+height: 70px;"></p>
+      <p><strong style=3D"color:#ffa500">Sunny</strong></p>
+      <p><span style=3D"color:#ffa500">Web: </span><a href=3D"https://jlcpc=
+b.com" target=3D"_blank"><span style=3D"color:#15a7ff">JLCPCB.COM</span></a=
+></p>
+      <p><span style=3D"color:#ffa500">Mail: </span><a href=3D"mailto:sunny=
+@jlcpcb.com" style=3D"color:#15a7ff"><span style=3D"color:#15a7ff">sunny@jl=
+cpcb.com</span></a></p></div><div id=3D"jlcRating"><p style=3D"font-size:16=
+px;font-size:16px"><span style=3D"color:rgb(0,0,0);background-color:rgb(255=
+,255,255)">How would you rate my reply?<br></span><a href=3D"https://jlcpcb=
+.com/api/overseasEmailService/workOrderWeb/redirectRatingPage/9F194F16312E1=
+5407A034ED73B457DD3BDD24732C5D0830E/18B7CAA646381ADC96B3A1494315A944/1" tar=
+get=3D"_blank" style=3D"text-align:start">Great</a><span style=3D"color:rgb=
+(0,0,0);background-color:rgb(255,255,255)"> =C2=A0 =C2=A0</span><a href=3D"=
+https://jlcpcb.com/api/overseasEmailService/workOrderWeb/redirectRatingPage=
+/9F194F16312E15407A034ED73B457DD3BDD24732C5D0830E/18B7CAA646381ADC96B3A1494=
+315A944/2" target=3D"_blank" style=3D"text-align:start">Okay</a><span style=
+=3D"color:rgb(0,0,0);background-color:rgb(255,255,255)"> =C2=A0 =C2=A0</spa=
+n><a href=3D"https://jlcpcb.com/api/overseasEmailService/workOrderWeb/redir=
+ectRatingPage/9F194F16312E15407A034ED73B457DD3BDD24732C5D0830E/18B7CAA64638=
+1ADC96B3A1494315A944/3" target=3D"_blank" style=3D"text-align:start">Not Go=
+od</a></p></div><img id=3D"jlc-trace-img" src=3D"https://jlcpcb.com/api/ove=
+rseasEmailService/emailWeb/markAsRead/569335275591049218/570043975043747841=
+" alt=3D""><p id=3D"x-jlc-thread-id=3D569335275591049218x-jlc-thread-access=
+-id=3D65b3430609714513bd9a63ce1382bcd1new"></p></div>
+
+--00000000000033e5370650172f48--
