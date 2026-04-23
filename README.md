@@ -2,11 +2,7 @@
 
 An open source development board using the NXP i.MX 6ULL application processor. This design was completed using KiCad version 9.0.6.
 
-## Project Status, April 11th, 2026: 
-
-This is the first revision of the completed PCBA design. It has not been fabricated or assembled yet. I am quoting the bare PCB with both JLCPCB and PCBWay, and sourcing the components.
-
-I have not yet created a linux build for this design, but will doing so using the Yocto project.
+See the Wiki page for updates on the status of this project.
 
 ## Objectives
 
