@@ -4,6 +4,9 @@ An open source development board using the NXP i.MX 6ULL application processor. 
 
 See the Wiki page for updates on the status of this project.
 
+## Related Repositories
+Yocto project and images: https://github.com/a1wolfe/iMX6-BareBones-Yocto
+
 ## Objectives
 
 The iMX6 Bare Bones project was created with the following objectives:
