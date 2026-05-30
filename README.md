@@ -6,6 +6,7 @@ See the Wiki page for updates on the status of this project.
 
 ## Related Repositories
 Yocto project and images: https://github.com/a1wolfe/iMX6-BareBones-Yocto
+Enclosure: https://github.com/a1wolfe/iMX6-BareBones-Enclosure
 
 ## Objectives
 
